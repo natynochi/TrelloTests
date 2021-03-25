@@ -1,18 +1,38 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
+# NUNIT
+*.VisualState.xml
+TestResult.xml
+
+#Specflow
+*.feature.cs
+TechTalk.SpecFlow.Tools/plugincompability.config
+TechTalk.SpecFlow.sln.GhostDoc.xml
+Features.Generated/
+/Installer/NuGetPackages/SpecFlow.Tools.MsBuild.Generation/build/SpecFlow.Tools.MsBuild.Generation.targets
+/Installer/NuGetPackages/SpecFlow.Tools.MsBuild.Generation/build/SpecFlow.Tools.MsBuild.Generation.props
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+# except build/, which is used as an MSBuild target.
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+
+# Build 
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
 [Bb]in/
+[Oo]bj/
+[Ll]og/
+UpgradeLog*
+.vs/*
 
-# Other files and folders
-.settings/
-
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
-
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# Rider
+.idea/*
+*.sln.iml
