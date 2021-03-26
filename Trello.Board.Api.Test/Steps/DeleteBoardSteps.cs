@@ -18,7 +18,7 @@ namespace TrelloTests.Steps
         }
         
         [Then(@"a response status code (\d*) must be returned")]
-        public void ThenAResponseStatusCode200MustBeReturned()
+        public void ThenAResponseStatusCode200MustBeReturned(int statusCode)
         {
             ScenarioContext.StepIsPending();
         }

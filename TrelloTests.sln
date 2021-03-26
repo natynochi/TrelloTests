@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "trello.board.api.tests", "trello.board.api.tests\trello.board.api.tests.csproj", "{9E9AF582-9DEB-47AA-88C6-BB5AF7645C79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trello.Board.Api.Test", "Trello.Board.Api.Test\Trello.Board.Api.Test.csproj", "{9E9AF582-9DEB-47AA-88C6-BB5AF7645C79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
