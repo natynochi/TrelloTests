@@ -1,32 +1,48 @@
+using System;
+using System.Net;
+using NUnit.Framework;
+using RestSharp;
 using TechTalk.SpecFlow;
+using TrelloTests.Model;
+using TrelloTests.Services;
 
 namespace TrelloTests.Steps
-{          
+{
     [Binding]
     public class DeleteBoardSteps
     {
-        [Given(@"a existent board")]
-        public void GivenAExistentBoard()
+        private readonly BoardServices _services;
+        private IRestResponse _response;
+        private string id;
+
+        public DeleteBoardSteps()
         {
-            ScenarioContext.StepIsPending();
+            _services = new BoardServices();
         }
-        
-        [When(@"a user execute a DELETE requisition for the board (.*)")]
-        public void WhenAUserExecuteADeleteRequisitionForTheBoardId(string id)
+
+        [Given(@"a existent board (.+)")]
+        public void GivenAExistentBoard(string name)
         {
-            ScenarioContext.StepIsPending();
+            id = _services.CreateDefaultBoard(name);
         }
-        
-        [Then(@"a response status code (\d*) must be returned")]
-        public void ThenAResponseStatusCode200MustBeReturned(int statusCode)
+
+        [When(@"a user execute a DELETE requisition for a board")]
+        public void WhenAUserExecuteADeleteRequisitionForABoard()
         {
-            ScenarioContext.StepIsPending();
+            _response = _services.DeleteBoard(id);
         }
-        
-        [Then(@"the board must not exist anymore")]
-        public void ThenTheBoardMustNotExistAnymore()
+
+        [Then(@"a response status code (.+) must be returned")]
+        public void ThenAResponseStatusCodeOkMustBeReturned(HttpStatusCode statusCode)
         {
-            ScenarioContext.StepIsPending();
+            Assert.AreEqual(statusCode, _response.StatusCode);
+        }
+
+        [Then(@"the board must be (.+) anymore")]
+        public void ThenTheBoardMustBeNotFoundAnymore(HttpStatusCode statusCode)
+        {
+            _response = _services.GetBoard(id);
+            Assert.AreEqual(statusCode, _response.StatusCode);
         }
     }
 }

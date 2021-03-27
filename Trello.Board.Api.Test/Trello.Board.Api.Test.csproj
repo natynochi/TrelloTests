@@ -9,6 +9,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.14" />
         <PackageReference Include="NUnit" Version="3.12.0" />
         <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
@@ -22,9 +24,6 @@
       <Compile Update="Features\DeleteBoard.feature.cs">
         <DependentUpon>DeleteBoard.feature</DependentUpon>
       </Compile>
-      <Compile Update="Features\CreateBoard.feature.cs">
-        <DependentUpon>CreateBoard.feature</DependentUpon>
-      </Compile>
       <Compile Update="Features\UpdateBoard.feature.cs">
         <DependentUpon>UpdateBoard.feature</DependentUpon>
       </Compile>
@@ -32,6 +31,12 @@
 
     <ItemGroup>
       <Folder Include="Utilities" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

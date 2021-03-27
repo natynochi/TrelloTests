@@ -1,6 +1,6 @@
 namespace TrelloTests.Model
 {
-    public class CreateBoard
+    public class BoardModel
     {
         public string Id { get; set; }
         public string Name { get; set; }

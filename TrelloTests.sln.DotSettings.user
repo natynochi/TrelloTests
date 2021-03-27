@@ -1,6 +1,9 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fd7b7ede_002Dd123_002D46e6_002Dbf1a_002De18d9cdb9303/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;trello.board.api.tests&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9c0d1ba7_002Db8c4_002D4af3_002D9c5f_002D8b0fc885aef0/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="UpdateBoard(&amp;quot;Public Board Test&amp;quot;,&amp;quot;Public board created test&amp;quot;,&amp;quot;true&amp;quot;,&amp;quot;null&amp;quot;,&amp;quot;null&amp;quot;,&amp;quot;public&amp;quot;,&amp;quot;public&amp;quot;,&amp;quot;public&amp;quot;,&amp;quot;admins&amp;quot;,&amp;quot;false&amp;quot;,&amp;quot;false&amp;quot;,&amp;quot;pink&amp;quot;,&amp;quot;pirate&amp;quot;,&amp;quot;false&amp;quot;,&amp;quot;label 1&amp;quot;,&amp;quot;label 2&amp;quot;,&amp;quot;label 3&amp;quot;,&amp;quot;label 4&amp;quot;,&amp;quot;label 5&amp;quot;,&amp;quot;label 6&amp;quot;,null)" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::9E9AF582-9DEB-47AA-88C6-BB5AF7645C79::net5.0::TrelloTests.Features.UpdateTrelloBoardFeature.UpdateBoard&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::9E9AF582-9DEB-47AA-88C6-BB5AF7645C79::net5.0::TrelloTests.Features.CreateTrelloBoardFeature.CreateBoard&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::9E9AF582-9DEB-47AA-88C6-BB5AF7645C79::net5.0::TrelloTests.Features.DeleteTrelloBoardFeature.DeleteTrelloBoard&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::9E9AF582-9DEB-47AA-88C6-BB5AF7645C79::net5.0::TrelloTests.Features.CreateTrelloBoardFeature&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
