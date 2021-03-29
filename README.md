@@ -1,8 +1,8 @@
-# ​TrelloTests
-​Interview home assignment
+# TrelloTests
+Interview home assignment
 
-​## Requirement 
-​dotnet 5
+## Requirement 
+dotnet 5
 
 ## Deliverable
 UI: Trello.Board.UI.Test
