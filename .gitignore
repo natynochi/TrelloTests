@@ -36,5 +36,4 @@ UpgradeLog*
 # Rider
 /.idea/*
 *.sln.iml
-TrelloTests.sln
-/.DS_Store
+.DS_Store
