@@ -1,33 +1,36 @@
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
-using System.Net;
-using System.Net.Http;
-using System.Threading;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
-using NUnit.Framework;
 using RestSharp;
-using TechTalk.SpecFlow.Infrastructure;
 
 namespace TrelloTests.Services
 {
     public class BaseServices
     {
-        protected RestClient Client { get; private set; }
+        protected RestClient Client { get; }
         protected IRestRequest Request { get; private set; }
+        public IConfiguration Configuration { get; }
+
+        public BaseServices()
+        {
+            Configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .AddEnvironmentVariables()
+                .Build();
+
+            var baseUrl = Configuration.GetSection("ApiUrl").Value;
+            Client = new RestClient(baseUrl);
+        }
 
         protected void InitRequest(string resources, Method method)
         {
-            dynamic config = ReadJsonFile(@"appsettings.json");
-            string baseUrl = config["API"]["BaseUrl"];
-            string apiKey = config["API"]["ApiKey"];
-            string token = config["API"]["Token"];
+            var apiKey = Configuration.GetSection("ApiKey").Value;
+            var token = Configuration.GetSection("Token").Value;
 
-            Client = new RestClient(baseUrl);
             Request = new RestRequest(resources, method);
             Request.AddQueryParameter("key", apiKey);
             Request.AddQueryParameter("token", token);
@@ -45,15 +48,6 @@ namespace TrelloTests.Services
             JObject jsonResponse = JObject.Parse(response.Content);
 
             return jsonResponse.IsValid(schema, out IList<ValidationError> errors);
-        }
-
-        public static dynamic ReadJsonFile(string file)
-        {
-            using (StreamReader json = new StreamReader(file))
-            {
-                var data = json.ReadToEnd();
-                return JsonConvert.DeserializeObject<dynamic>(data);
-            }
         }
     }
 }

@@ -1,9 +1,7 @@
-using System;
 using System.Net;
 using NUnit.Framework;
 using RestSharp;
 using TechTalk.SpecFlow;
-using TrelloTests.Model;
 using TrelloTests.Services;
 
 namespace TrelloTests.Steps
@@ -23,7 +21,7 @@ namespace TrelloTests.Steps
         [Given(@"a existent board (.+)")]
         public void GivenAExistentBoard(string name)
         {
-            id = _services.CreateDefaultBoard(name);
+            id = _services.PostDefaultBoard(name);
         }
 
         [When(@"a user execute a DELETE requisition for a board")]

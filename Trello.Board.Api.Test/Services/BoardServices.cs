@@ -5,7 +5,7 @@ namespace TrelloTests.Services
 {
     public class BoardServices : BaseServices
     {
-        public string CreateDefaultBoard(string name)
+        public string PostDefaultBoard(string name)
         {
             InitRequest("/boards/", Method.POST);
             Request.AddQueryParameter("name", name);
@@ -13,7 +13,7 @@ namespace TrelloTests.Services
             return response.Data.Id;
         }
 
-        public IRestResponse CreateBoard(string name, string desc, string idOrganization,
+        public IRestResponse PostBoard(string name, string desc, string idOrganization,
             string idBoardSource, string keepFromSource, string powerUps, string defaultLabels, string defaultLists,
             string prefs_permissionLevel, string prefs_voting, string prefs_comments, string prefs_invitations,
             string prefs_selfJoin, string prefs_cardCovers, string prefs_background, string prefs_cardAging)
@@ -45,7 +45,7 @@ namespace TrelloTests.Services
         }
 
 
-        public IRestResponse UpdateBoard(string id, string name, string desc, string closed, string subscribed,
+        public IRestResponse PutBoard(string id, string name, string desc, string closed, string subscribed,
             string idOrganization, string prefs_permissionLevel, string prefs_voting, string prefs_comments, 
             string prefs_invitations, string prefs_selfJoin, string prefs_cardCovers, string prefs_background, 
             string prefs_cardAging, string prefs_calendarFeedEnabled, string labelNames_green)

@@ -7,12 +7,12 @@ using TrelloTests.Services;
 namespace TrelloTests.Steps
 {
     [Binding]
-    public class CreateBoardSteps
+    public class PostBoardSteps
     {
         private readonly BoardServices _services;
         private IRestResponse _response;
 
-        public CreateBoardSteps()
+        public PostBoardSteps()
         {
             _services = new BoardServices();
         }
@@ -24,7 +24,7 @@ namespace TrelloTests.Steps
             string prefs_permissionLevel, string prefs_voting, string prefs_comments, string prefs_invitations,
             string prefs_selfJoin, string prefs_cardCovers, string prefs_background, string prefs_cardAging)
         {
-            _response = _services.CreateBoard(
+            _response = _services.PostBoard(
                 name, desc, idOrganization, idBoardSource, keepFromSource, powerUps,
                 defaultLabels, defaultLists, prefs_permissionLevel, prefs_voting,
                 prefs_comments, prefs_invitations, prefs_selfJoin, prefs_cardCovers,

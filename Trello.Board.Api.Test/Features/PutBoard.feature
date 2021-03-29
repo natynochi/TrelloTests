@@ -1,8 +1,7 @@
-Feature: Update trello board
-
-    
+Feature: Put trello board
+         
     @positive_cases
-    Scenario Outline: Update board
+    Scenario Outline: Put board request successfully
         Given a pre existent board "Board to be updated"
         When a user execute a PUT requisition for a board with the parameters <name> <desc> <closed> <subscribed> <idOrganization> <prefs_permissionLevel> <prefs_voting> <prefs_comments> <prefs_invitations> <prefs_selfJoin> <prefs_cardCovers> <prefs_background> <prefs_cardAging> <prefs_calendarFeedEnabled> and <labelNames_green> to update the board
         Then a OK response status code response must be returned

@@ -1,25 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Net;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Schema;
 using NUnit.Framework;
 using RestSharp;
 using TechTalk.SpecFlow;
-using TrelloTests.Model;
 using TrelloTests.Services;
 
 namespace TrelloTests.Steps
 {
     [Binding]
-    public class UpdateBoardSteps
+    public class PutBoardSteps
     {
         private readonly BoardServices _services;
         private IRestResponse _response;
         private string id;
 
-        public UpdateBoardSteps()
+        public PutBoardSteps()
         {
             _services = new BoardServices();
         }
@@ -28,7 +22,7 @@ namespace TrelloTests.Steps
         [Given(@"a pre existent board (.+)")]
         public void GivenAPreExistentBoard(string name)
         {
-            id = _services.CreateDefaultBoard(name);
+            id = _services.PostDefaultBoard(name);
         }
 
         [When(
@@ -38,7 +32,7 @@ namespace TrelloTests.Steps
             string prefs_comments, string prefs_invitations, string prefs_selfJoin, string prefs_cardCovers,
             string prefs_background, string prefs_cardAging, string prefs_calendarFeedEnabled, string labelNames_green)
         {
-            _response = _services.UpdateBoard(id, name, desc, closed, subscribed, idOrganization, prefs_permissionLevel,
+            _response = _services.PutBoard(id, name, desc, closed, subscribed, idOrganization, prefs_permissionLevel,
                 prefs_voting, prefs_comments, prefs_invitations, prefs_selfJoin, prefs_cardCovers, prefs_background,
                 prefs_cardAging, prefs_calendarFeedEnabled, labelNames_green);
         }
