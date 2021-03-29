@@ -14,13 +14,14 @@
         <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
         <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.14" />
-        <PackageReference Include="NUnit" Version="3.12.0" />
-        <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+        <PackageReference Include="NUnit" Version="3.13.1" />
+        <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.1" />
         <PackageReference Include="RestSharp" Version="106.11.7" />
-        <PackageReference Include="SpecFlow" Version="3.7.38" />
-        <PackageReference Include="SpecFlow.NUnit" Version="3.7.38" />
-        <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.7.38" />
+        <PackageReference Include="SpecFlow" Version="3.5.5" />
+        <PackageReference Include="SpecFlow.Allure" Version="3.5.0.4" />
+        <PackageReference Include="SpecFlow.NUnit" Version="3.5.5" />
+        <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.5.5" />
     </ItemGroup>
 
     <ItemGroup>
@@ -30,6 +31,7 @@
       <Compile Update="Features\PutBoard.feature.cs">
         <DependentUpon>UpdateBoard.feature</DependentUpon>
       </Compile>
+      <Compile Remove="TestResults\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -37,10 +39,21 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
       <None Remove="Default.srprofile.xml" />
+      <None Update="specflow.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="allureConfig.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Remove="TestResults\**" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="TestResults" />
+      <SpecFlowFeatureFiles Remove="TestResults\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="TestResults\**" />
     </ItemGroup>
 
 </Project>

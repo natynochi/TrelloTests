@@ -1,3 +1,4 @@
+
 using TechTalk.SpecFlow;
 using Trello.Board.UI.Test.Context;
 
@@ -12,11 +13,12 @@ namespace Trello.Board.UI.Test.Utilities
         {
             _context = context;
         }
-        
+
         [BeforeScenario]
         protected void Init()
         {
             _context.Init();
+            
         }
     }
 }

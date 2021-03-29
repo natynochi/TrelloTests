@@ -5,7 +5,8 @@ using TechTalk.SpecFlow;
 using TrelloTests.Services;
 
 namespace TrelloTests.Steps
-{
+{    
+    
     [Binding]
     public class DeleteBoardSteps
     {
